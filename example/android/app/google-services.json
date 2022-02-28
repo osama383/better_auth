@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "506166634624",
+    "project_id": "better-auth-918b7",
+    "storage_bucket": "better-auth-918b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506166634624:android:39b26c048deba140a25e65",
+        "android_client_info": {
+          "package_name": "binary.builds.betterauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506166634624-gqma4hm1atfp6njgotl1rhvuaqaokjv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQcf8eTwtc4Srt3XZIHtQ5lcA419ryAXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506166634624-gqma4hm1atfp6njgotl1rhvuaqaokjv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

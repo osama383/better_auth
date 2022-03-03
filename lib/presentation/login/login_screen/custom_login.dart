@@ -4,12 +4,12 @@ import 'package:better_auth/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginForm extends StatelessWidget {
+class CustomLogin extends StatelessWidget {
   final IAuthFacade authFacade;
   final Function onLoginSuccess;
   final Widget Function(BuildContext context) builder;
 
-  const LoginForm({
+  const CustomLogin({
     Key? key,
     required this.authFacade,
     required this.onLoginSuccess,

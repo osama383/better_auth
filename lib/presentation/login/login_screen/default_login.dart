@@ -7,20 +7,22 @@ import 'package:better_auth/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DefaultLoginForm extends StatelessWidget {
+class DefaultLogin extends StatelessWidget {
   final Function onLoginSuccess;
   final IAuthFacade authFacade;
+  final ThemeData? themeData;
 
-  const DefaultLoginForm({
+  const DefaultLogin({
     Key? key,
     required this.authFacade,
     required this.onLoginSuccess,
+    this.themeData,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: BetterAuthTheme.themeData,
+      data: themeData ?? BetterAuthTheme.themeData,
       child: BlocProvider(
         create: (context) => LoginBloc(authFacade: authFacade),
         child: BlocConsumer<LoginBloc, LoginState>(

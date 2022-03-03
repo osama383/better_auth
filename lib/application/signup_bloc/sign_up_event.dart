@@ -1,4 +1,9 @@
 part of 'sign_up_bloc.dart';
 
-@immutable
-abstract class SignUpEvent {}
+@freezed
+class SignUpEvent with _$SignUpEvent {
+  factory SignUpEvent.onEmailInput(String input) = OnEmailInput;
+  factory SignUpEvent.onPasswordInput(String input) = OnPasswordInput;
+  factory SignUpEvent.onSignupWithEmailAndPasswordPressed() =
+      OnSignupWithEmailAndPasswordPressed;
+}

@@ -1,13 +1,12 @@
 import 'package:better_auth/infrastructure/firebase_auth_facade.dart';
-import 'package:better_auth/presentation/login/login_screen/default_login_form.dart';
-import 'package:better_auth/presentation/login/login_screen/login_form.dart';
+import 'package:better_auth/presentation/login/login_screen/custom_login.dart';
+import 'package:better_auth/presentation/login/login_screen/default_login.dart';
 import 'package:example/home/home.dart';
 import 'package:example/widgets/animation_widgets.dart';
 import 'package:example/widgets/cutom_layout_widgets.dart';
 import 'package:example/widgets/default_layout_widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -57,7 +56,7 @@ class DefaultLoginExample extends StatelessWidget {
           children: [
             AnimatedImage(),
             HeaderTextWidgets(),
-            DefaultLoginForm(
+            DefaultLogin(
               authFacade: FirebaseAuthFacade(
                 firebaseAuth: FirebaseAuth.instance,
               ),
@@ -82,7 +81,7 @@ class CustomLoginExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[300],
-      child: LoginForm(
+      child: CustomLogin(
         authFacade: FirebaseAuthFacade(firebaseAuth: FirebaseAuth.instance),
         onLoginSuccess: () {},
         builder: (context) {

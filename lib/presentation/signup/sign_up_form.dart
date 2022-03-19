@@ -1,20 +1,22 @@
 import 'package:better_auth/application/signup_bloc/sign_up_bloc.dart';
 import 'package:better_auth/domain/i_auth_facade/i_auth_facade.dart';
+import 'package:better_auth/presentation/signup/widgets/email_signup.dart';
+import 'package:better_auth/presentation/signup/widgets/password_sign_up.dart';
 import 'package:better_auth/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CustomSignUp extends StatelessWidget {
+class SignUpForm extends StatelessWidget {
   final Function onSignUpSuccess;
   final IAuthFacade authFacade;
   final ThemeData? themeData;
-  final Widget Function(BuildContext context) builder;
+  final Widget Function(BuildContext context)? builder;
 
-  const CustomSignUp({
+  const SignUpForm({
     Key? key,
     required this.authFacade,
     required this.onSignUpSuccess,
-    required this.builder,
+    this.builder,
     this.themeData,
   }) : super(key: key);
 
@@ -34,7 +36,23 @@ class CustomSignUp extends StatelessWidget {
               ),
             );
           },
-          builder: (context, state) => builder(context),
+          builder: (context, state) {
+            return builder != null
+                ? builder!(context)
+                : Form(
+                    autovalidateMode: state.showErrors
+                        ? AutovalidateMode.always
+                        : AutovalidateMode.disabled,
+                    child: Column(
+                      children: const [
+                        SignUpEmail(),
+                        SizedBox(height: 8),
+                        SignUpPassword(),
+                        SizedBox(height: 8),
+                      ],
+                    ),
+                  );
+          },
         ),
       ),
     );
